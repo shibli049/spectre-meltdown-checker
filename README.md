@@ -3,14 +3,24 @@ Spectre & Meltdown Checker
 
 A simple shell script to tell if your Linux installation is vulnerable against the 3 "speculative execution" CVEs that were made public early 2018.
 
-Without options, it'll inspect you currently running kernel. 
+Without options, it'll inspect your currently running kernel. 
 You can also specify a kernel image on the command line, if you'd like to inspect a kernel you're not running.
 
 The script will do its best to detect mitigations, including backported non-vanilla patches, regardless of the advertised kernel version number.
 
 ## Example of script output
 
-![checker](https://framapic.org/6O4v4AAwMenv/M6J4CFWwsB3z.png)
+- Intel Haswell CPU running under Ubuntu 16.04 LTS
+
+![haswell](https://framapic.org/1kWmNwE6ll0p/ayTRX9JRlHJ7.png)
+
+- AMD Ryzen running under OpenSUSE Tumbleweed
+
+![ryzen](https://framapic.org/TkWbuh421YQR/6MAGUP3lL6Ne.png)
+
+- Batch mode (JSON flavor)
+
+![batch](https://framapic.org/HEcWFPrLewbs/om1LdufspWTJ.png)
 
 ## Quick summary of the CVEs
 
@@ -40,6 +50,6 @@ However, some mitigations could also exist in your kernel that this script doesn
 
 Your system exposure also depends on your CPU. As of now, AMD and ARM processors are marked as immune to some or all of these vulnerabilities (except some specific ARM models). All Intel processors manufactured since circa 1995 are thought to be vulnerable. Whatever processor one uses, one might seek more information from the manufacturer of that processor and/or of the device in which it runs.
 
-The nature of the discovered vulnerabilities being quite new, the landscape of vulnerable processors can be expected to change over time, which is why this script makes the assumption that all CPUs are vulnerable, except if the manufacturer explicitely stated otherwise in a verifiable public announcement.
+The nature of the discovered vulnerabilities being quite new, the landscape of vulnerable processors can be expected to change over time, which is why this script makes the assumption that all CPUs are vulnerable, except if the manufacturer explicitly stated otherwise in a verifiable public announcement.
 
 This tool has been released in the hope that it'll be useful, but don't use it to jump to conclusions about your security.
